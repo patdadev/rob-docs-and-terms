@@ -3,33 +3,19 @@ import { resolve } from "path";
 
 const BASE_URL = "https://robthebot.com";
 
-interface SitemapEntry {
-  path: string;
-  lastmod?: string;
-  changefreq?:
-    | "always"
-    | "hourly"
-    | "daily"
-    | "weekly"
-    | "monthly"
-    | "yearly"
-    | "never";
-  priority?: string;
-}
-
-const entries: SitemapEntry[] = [
+const entries = [
   { path: "/tos", changefreq: "monthly", priority: "0.8" },
   { path: "/privacy", changefreq: "monthly", priority: "0.8" },
 ];
 
-function generateSitemap(entries: SitemapEntry[]) {
-  const urls = entries.map((e) =>
+function generateSitemap(sitemapEntries) {
+  const urls = sitemapEntries.map((entry) =>
     [
       `  <url>`,
-      `    <loc>${BASE_URL}${e.path}</loc>`,
-      e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
-      e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
-      e.priority ? `    <priority>${e.priority}</priority>` : null,
+      `    <loc>${BASE_URL}${entry.path}</loc>`,
+      entry.lastmod ? `    <lastmod>${entry.lastmod}</lastmod>` : null,
+      entry.changefreq ? `    <changefreq>${entry.changefreq}</changefreq>` : null,
+      entry.priority ? `    <priority>${entry.priority}</priority>` : null,
       `  </url>`,
     ]
       .filter(Boolean)

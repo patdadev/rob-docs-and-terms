@@ -1,3 +1,5 @@
-# Welcome to your Lovable project
+# Rob Docs and Terms
 
-TODO: Document your project here
+Static React site for Rob's public Terms of Service and Privacy Policy pages.
+
+The site builds with Vite and generates `public/sitemap.xml` before local dev and production builds.
