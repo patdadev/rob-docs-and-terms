@@ -1,7 +1,7 @@
 import { writeFileSync } from "fs";
 import { resolve } from "path";
 
-const BASE_URL = "https://robthebot.com";
+const BASE_URL = (process.env.SITE_URL ?? "https://robthebot.com").replace(/\/+$/, "");
 
 const entries = [
   { path: "/tos", changefreq: "monthly", priority: "0.8" },
