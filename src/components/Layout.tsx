@@ -37,8 +37,7 @@ const Layout = ({ children }: LayoutProps) => {
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6 lg:px-8">
           <p className="text-center text-sm text-muted-foreground sm:text-left">
-            Rob is a Discord bot currently operated for a private/community Discord
-            server.
+            ©2026 Patrick Faint
           </p>
           <nav className="flex items-center gap-6 text-sm text-muted-foreground">
             <Link to="/tos">Terms of Service</Link>
